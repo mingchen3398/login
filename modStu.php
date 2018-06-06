@@ -63,7 +63,7 @@ if(isset($_POST['sub']))
 else
 {//进入页面，代码开始
 	$id=$_GET['id'];
-	$sql="select stu.id,stu.name,newname,sex,birthday,hobby,`desc`,class.name as cname,cid from stu join class on cid=class.id where stu.id=$id";
+	$sql="select stu.id,stu.name,newname,sex,birthday,hobby,`desc`,cname,cid from stu join class on cid=class.id where stu.id=$id";
 	$query=mysqli_query($conn,$sql);
 	$rs=mysqli_fetch_assoc($query);
 	$hobby0=explode(',',$rs['hobby']);
@@ -139,7 +139,7 @@ else
 			if($rs['cid']==$rsCla['id'])
 				echo 'selected="selected"';
 			?>>
-			<?php echo $rsCla['name']?>
+			<?php echo $rsCla['cname']?>
 			</option>
 			<?php } ?>
 			</select></div></td>
